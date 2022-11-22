@@ -1,8 +1,8 @@
 package com.epam.mjc.collections.map;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class FunctionValueFinder {
     public boolean isFunctionValuePresent(List<Integer> sourceList, int requiredValue) {
@@ -11,7 +11,10 @@ public class FunctionValueFinder {
     }
 
     private Map<Integer, Integer> calculateFunctionMap(List<Integer> sourceList) {
-        return sourceList.stream()
-                .collect(Collectors.toMap(x -> x, x -> x * 5 + 2));
+        Map<Integer, Integer> myMap = new HashMap<>();
+        for (Integer i : sourceList) {
+            myMap.put(i, 5 * i + 2);
+        }
+        return myMap;
     }
 }

@@ -8,7 +8,6 @@ public class KeyValueSwapper {
 
         return sourceMap.entrySet()
                 .stream().collect(
-                        Collectors.toMap(Map.Entry::getValue, Map.Entry::getKey, (oldValue, newValue) -> oldValue)
-                );
+                        Collectors.toMap(Map.Entry::getValue, Map.Entry::getKey, (oldValue, newValue) -> oldValue));
     }
 }
